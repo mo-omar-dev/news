@@ -7,9 +7,13 @@ class AppTheme {
       secondaryHeaderColor: AppColor.white,
       indicatorColor: AppColor.black,
       scaffoldBackgroundColor: AppColor.white,
-      appBarTheme:
-          const AppBarTheme(centerTitle: true, backgroundColor: AppColor.white),
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: AppColor.black),
+          centerTitle: true,
+          backgroundColor: AppColor.white),
       textTheme: const TextTheme(
+        titleLarge: TextStyle(
+            color: AppColor.white, fontSize: 24, fontWeight: FontWeight.normal),
         displayLarge: TextStyle(
             color: AppColor.black, fontSize: 24, fontWeight: FontWeight.normal),
         displayMedium: TextStyle(
@@ -28,9 +32,13 @@ class AppTheme {
       secondaryHeaderColor: AppColor.black,
       indicatorColor: AppColor.white,
       scaffoldBackgroundColor: AppColor.black,
-      appBarTheme:
-          const AppBarTheme(centerTitle: true, backgroundColor: AppColor.black),
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: AppColor.white),
+          centerTitle: true,
+          backgroundColor: AppColor.black),
       textTheme: const TextTheme(
+        titleLarge: TextStyle(
+            color: AppColor.black, fontSize: 24, fontWeight: FontWeight.normal),
         displayLarge: TextStyle(
             color: AppColor.white, fontSize: 24, fontWeight: FontWeight.normal),
         displayMedium: TextStyle(

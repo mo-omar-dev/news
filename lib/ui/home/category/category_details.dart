@@ -1,11 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:news/api/api_manager.dart';
 import 'package:news/model/source_response.dart';
 import 'package:news/theme/app_color.dart';
+import 'package:news/ui/home/category/category_model.dart';
 import 'package:news/ui/home/category/sources_tab/sources_tab.dart';
 
 class CategoryDetails extends StatefulWidget {
-  const CategoryDetails({super.key});
+  CategoryModel category;
+  CategoryDetails({super.key, required this.category});
 
   @override
   State<CategoryDetails> createState() => _CategoryDetailsState();
@@ -15,7 +18,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<SourceResponse?>(
-        future: ApiManager.getSources(),
+        future: ApiManager.getSources(widget.category.id),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
@@ -30,7 +33,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                     style: Theme.of(context).textTheme.headlineSmall),
                 TextButton(
                     onPressed: () {
-                      ApiManager.getSources();
+                      ApiManager.getSources(widget.category.id);
                       setState(() {});
                     },
                     child: Text('Try Again',
@@ -44,7 +47,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                 Text(snapshot.data!.message!),
                 TextButton(
                     onPressed: () {
-                      ApiManager.getSources();
+                      ApiManager.getSources(widget.category.id);
                       setState(() {});
                     },
                     child: Text('Try Again',

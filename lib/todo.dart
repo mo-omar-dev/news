@@ -2,5 +2,7 @@ library;
 
 /// todo:
 /// splash screen
-/// time ago
 /// pagination
+/// news details
+/// theme & language dropdown menu
+/// search
